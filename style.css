@@ -262,15 +262,19 @@ footer p {
   position: fixed;
   right: 22px;
   bottom: 22px;
-  background: var(--primary);
-  color: #000;
+  background: #1F2933;
+  color: #fff;
   padding: 14px 22px;
   border-radius: 50px;
   text-decoration: none;
   font-weight: 600;
-  box-shadow: 0 10px 25px rgba(255,183,197,0.45);
+  letter-spacing: 0.3px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
   z-index: 9999;
+  transition: 0.3s ease;
 }
 .hire-btn:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px);
+  background: #000;
 }
+

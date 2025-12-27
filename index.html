@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-8D2L01MMK8"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-8D2L01MMK8");
+    </script>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Manas Acharya | Java Developer</title>
@@ -54,11 +68,14 @@
 
         <div class="buttons">
           <a
-            href="assets/Manas_Acharya_Resume_Java.pdf"
-            download
+            href="./assets/Manas_Acharya_Resume.pdf"
+            target="_blank"
+            onclick="gtag('event','resume_view',{event_category:'Resume'});"
             class="btn primary"
-            >Download Resume</a
           >
+            Download Resume
+          </a>
+
           <a href="#projects" class="btn secondary">View Projects</a>
         </div>
       </div>
@@ -165,6 +182,8 @@
 
     <link rel="dns-prefetch" href="//fonts.googleapis.com" />
     <link rel="dns-prefetch" href="//fonts.gstatic.com" />
-    <a href="#contact" class="hire-btn">Hire Me</a>
+    <a href="https://wa.me/9584202737" class="hire-btn" target="_blank">
+      Hire Me
+    </a>
   </body>
 </html>
