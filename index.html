@@ -51,26 +51,52 @@
     <meta property="twitter:title" content="Manas Acharya | Java Backend Developer" />
     <meta property="twitter:description" content="Java Backend Developer specializing in building scalable systems using Spring Boot, REST APIs, and relational databases." />
 
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://manasacharya.in/" />
+
     <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "SoftwareSourceCode",
-        "name": "Manas Acharya Portfolio",
-        "description": "Portfolio of Manas Acharya, a Java Backend Developer specializing in Spring Boot, REST APIs, and scalable systems.",
-        "author": {
-          "@type": "Person",
-          "name": "Manas Acharya",
-          "jobTitle": "Java Backend Developer",
-          "email": "manasacharya051@gmail.com",
-          "url": "https://manasacharya.in",
-          "sameAs": [
-            "https://github.com/Manas1906",
-            "https://www.linkedin.com/in/acharya-manas"
-          ]
-        },
-        "programmingLanguage": "Java",
-        "runtimePlatform": "Spring Boot"
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://manasacharya.in/#person",
+            "name": "Manas Acharya",
+            "jobTitle": "Java Backend Developer",
+            "description": "Java Backend Developer specializing in Spring Boot, REST APIs, MySQL, and scalable systems.",
+            "email": "manasacharya051@gmail.com",
+            "url": "https://manasacharya.in",
+            "image": "https://manasacharya.in/assets/og-image.jpg",
+            "sameAs": [
+              "https://github.com/Manas1906",
+              "https://www.linkedin.com/in/acharya-manas"
+            ],
+            "knowsAbout": [
+              "Java",
+              "Spring Boot",
+              "RESTful APIs",
+              "MySQL",
+              "Hibernate ORM",
+              "Redis Caching",
+              "System Design",
+              "Backend Development",
+              "Microservices",
+              "Spring Security",
+              "Docker"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://manasacharya.in/#website",
+            "url": "https://manasacharya.in",
+            "name": "Manas Acharya | Java Backend Developer",
+            "description": "Portfolio of Manas Acharya, a Java Backend Developer specializing in Spring Boot, REST APIs, MySQL, and scalable systems.",
+            "publisher": {
+              "@id": "https://manasacharya.in/#person"
+            }
+          }
+        ]
       }
     </script>
   </head>
