@@ -1258,3 +1258,412 @@ footer {
     transform: translateY(-8px) rotate(-45deg);
   }
 }
+
+/* --- TaskSphere Custom Architecture Diagram Styles --- */
+.ts-diagram {
+  background: hsl(var(--bg-darker));
+  border: 1px solid hsl(var(--border-color));
+  border-radius: 12px;
+  padding: 30px;
+  color: hsl(var(--text-primary));
+  font-family: var(--font-sans);
+}
+
+.ts-diagram-header {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.ts-diagram-header h3 {
+  font-size: 1.5rem;
+  letter-spacing: 1.5px;
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 6px;
+}
+
+.ts-diagram-header p {
+  color: hsl(var(--text-secondary));
+  font-size: 0.9rem;
+}
+
+.ts-diagram-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr 280px;
+  gap: 24px;
+}
+
+.ts-column {
+  background: hsl(var(--bg-dark));
+  border: 1px solid hsl(var(--border-color));
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.ts-card-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: hsl(var(--secondary));
+  margin-bottom: 18px;
+  border-bottom: 1px solid hsl(var(--border-color) / 0.5);
+  padding-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+.ts-highlight-list,
+.ts-stack-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0;
+}
+
+.ts-highlight-list li,
+.ts-stack-list li {
+  display: flex;
+  gap: 12px;
+  font-size: 0.85rem;
+  align-items: flex-start;
+  border-bottom: none !important;
+  padding: 0 !important;
+}
+
+.ts-highlight-list li::before,
+.ts-stack-list li::before {
+  content: none !important;
+}
+
+.ts-highlight-icon,
+.ts-stack-logo {
+  font-size: 1.25rem;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: hsl(var(--bg-card));
+  border: 1px solid hsl(var(--border-color));
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.ts-highlight-list li strong,
+.ts-stack-list li strong {
+  display: block;
+  color: hsl(var(--text-primary));
+  font-weight: 600;
+}
+
+.ts-highlight-list li span,
+.ts-stack-list li span {
+  display: block;
+  color: hsl(var(--text-secondary));
+  font-size: 0.75rem;
+  margin-top: 2px;
+}
+
+/* Main Flow Panel */
+.ts-main-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.ts-flow-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.ts-flow-card {
+  position: relative;
+  background: hsl(var(--bg-dark));
+  border: 1px solid hsl(var(--border-color));
+  border-radius: 10px;
+  padding: 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.ts-flow-card:hover {
+  transform: translateY(-2px);
+  border-color: hsl(var(--primary));
+  box-shadow: 0 5px 15px hsl(var(--primary-glow));
+}
+
+.ts-flow-icon {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+.ts-flow-text strong {
+  display: block;
+  font-size: 0.85rem;
+  color: hsl(var(--text-primary));
+}
+
+.ts-flow-text span {
+  display: block;
+  font-size: 0.7rem;
+  color: hsl(var(--text-secondary));
+  margin-top: 4px;
+}
+
+.ts-badge {
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: hsl(var(--primary));
+  color: #000;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ts-arrow {
+  color: hsl(var(--primary));
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+/* Async Pipeline Container */
+.ts-async-pipeline {
+  background: hsl(var(--bg-dark) / 0.7);
+  border: 1px dashed hsl(var(--border-color));
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.ts-async-header {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  text-align: center;
+  color: hsl(var(--secondary));
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.ts-async-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.ts-async-card {
+  background: hsl(var(--bg-card));
+  border: 1px solid hsl(var(--border-color));
+  border-radius: 8px;
+  padding: 14px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.ts-async-card:hover {
+  border-color: hsl(var(--secondary));
+  transform: translateY(-2px);
+}
+
+.ts-async-icon {
+  font-size: 1.25rem;
+  margin-bottom: 6px;
+}
+
+.ts-async-card strong {
+  display: block;
+  font-size: 0.8rem;
+  color: hsl(var(--text-primary));
+}
+
+.ts-async-card span {
+  display: block;
+  font-size: 0.7rem;
+  color: hsl(var(--text-secondary));
+  margin-top: 4px;
+  line-height: 1.3;
+}
+
+/* Why Async Container */
+.ts-why-async {
+  background: hsl(var(--bg-dark));
+  border: 1px solid hsl(var(--border-color));
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.ts-check-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0;
+}
+
+.ts-check-list li {
+  font-size: 0.85rem;
+  color: hsl(var(--text-secondary));
+  border: none !important;
+  padding-left: 0 !important;
+}
+
+.ts-check-list li::before {
+  content: none !important;
+}
+
+.ts-check-list li strong {
+  color: hsl(var(--text-primary));
+}
+
+/* Signaling Flow Sequence */
+.ts-signaling-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.ts-signaling-step {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.ts-signaling-actor {
+  background: hsl(var(--bg-dark));
+  border: 1px solid hsl(var(--border-color));
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  min-width: 180px;
+  text-align: center;
+}
+
+.ts-signaling-actor.ts-server {
+  border-color: hsl(var(--primary));
+  color: hsl(var(--primary));
+}
+
+.ts-signaling-arrow {
+  flex-grow: 1;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: hsl(var(--secondary));
+  text-align: center;
+  white-space: nowrap;
+}
+
+.ts-signaling-step-note {
+  font-size: 0.8rem;
+  color: hsl(var(--text-secondary));
+  text-align: center;
+  font-style: italic;
+  padding: 8px;
+  background: hsl(var(--bg-darker) / 0.5);
+  border-radius: 6px;
+  border-left: 3px solid hsl(var(--secondary));
+}
+
+/* Stateless Stack Tab */
+.ts-db-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.ts-db-card {
+  background: hsl(var(--bg-dark));
+  border: 1px solid hsl(var(--border-color));
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.ts-db-card:hover {
+  transform: translateY(-4px);
+}
+
+.ts-db-card.cache-aside:hover {
+  border-color: hsl(var(--secondary));
+}
+
+.ts-db-card.queue-broker:hover {
+  border-color: hsl(var(--primary));
+}
+
+.ts-db-card.db-transaction:hover {
+  border-color: #61afef;
+}
+
+.ts-db-card h4 {
+  font-size: 1.05rem;
+  margin-bottom: 12px;
+  color: hsl(var(--text-primary));
+}
+
+.ts-db-card.cache-aside h4 {
+  color: hsl(var(--secondary));
+}
+
+.ts-db-card.queue-broker h4 {
+  color: hsl(var(--primary));
+}
+
+.ts-db-card.db-transaction h4 {
+  color: #61afef;
+}
+
+.ts-db-card p {
+  font-size: 0.85rem;
+  color: hsl(var(--text-secondary));
+  line-height: 1.5;
+}
+
+/* Responsive Rules for Diagram */
+@media (max-width: 1024px) {
+  .ts-diagram-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .ts-flow-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .ts-arrow {
+    transform: rotate(90deg);
+  }
+  .ts-async-grid {
+    grid-template-columns: 1fr;
+  }
+  .ts-db-grid {
+    grid-template-columns: 1fr;
+  }
+  .ts-signaling-step {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .ts-signaling-arrow {
+    transform: rotate(90deg);
+    padding: 10px 0;
+  }
+}
+

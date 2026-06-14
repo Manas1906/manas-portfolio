@@ -251,97 +251,263 @@
         </div>
       </section>
 
-      <!-- System Architecture Visualizer Section -->
+       <!-- System Architecture Visualizer Section -->
       <section id="architecture" class="architecture-section">
         <div class="section-header">
           <span class="section-subtitle">System Design</span>
-          <h2 class="section-title">Backend Architecture</h2>
+          <h2 class="section-title">TaskSphere Architecture</h2>
           <div class="title-underline"></div>
         </div>
         <div class="architecture-container">
           <div class="architecture-tabs">
-            <button class="arch-tab active" data-tab="flow">Request Life Cycle</button>
-            <button class="arch-tab" data-tab="security">Security & Auth</button>
-            <button class="arch-tab" data-tab="db">Database & Cache</button>
+            <button class="arch-tab active" data-tab="flow">Pipeline Architecture</button>
+            <button class="arch-tab" data-tab="security">Signaling Flow</button>
+            <button class="arch-tab" data-tab="db">Stateless Stack</button>
           </div>
           
           <div class="architecture-content">
-            <!-- Request Flow Tab -->
+            <!-- TaskSphere Pipeline Diagram (Matching Uploaded Image Style) -->
             <div class="arch-pane active" id="flow-pane">
-              <div class="flow-chart">
-                <div class="flow-node client">
-                  <div class="flow-node-title">Client App</div>
-                  <span class="flow-node-subtitle">React / Browser</span>
+              <div class="ts-diagram">
+                <div class="ts-diagram-header">
+                  <h3>TASKSPHERE REAL-TIME ENGINE</h3>
+                  <p>WebRTC Voice Signaling & Redis Event-Driven Pipeline</p>
                 </div>
-                <div class="flow-arrow">→</div>
-                <div class="flow-node gateway">
-                  <div class="flow-node-title">Spring Boot API</div>
-                  <span class="flow-node-subtitle">Controller & Filter Layer</span>
-                </div>
-                <div class="flow-arrow">→</div>
-                <div class="flow-node service">
-                  <div class="flow-node-title">Service Layer</div>
-                  <span class="flow-node-subtitle">Business Logic</span>
-                </div>
-                <div class="flow-arrow">→</div>
-                <div class="flow-node data">
-                  <div class="flow-node-title">JPA Repository</div>
-                  <span class="flow-node-subtitle">MySQL DB / Redis Cache</span>
+                
+                <div class="ts-diagram-grid">
+                  <!-- Left Highlights Column -->
+                  <div class="ts-column ts-highlights">
+                    <div class="ts-card-title">Key Highlights</div>
+                    <ul class="ts-highlight-list">
+                      <li>
+                        <div class="ts-highlight-icon">🔒</div>
+                        <div>
+                          <strong>Stateless Compute</strong>
+                          <span>JWT authorization with decoupled endpoints</span>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="ts-highlight-icon">⚡</div>
+                        <div>
+                          <strong>Zero-Cost Transport</strong>
+                          <span>Direct WebRTC P2P audio bypassed from server cost</span>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="ts-highlight-icon">⚙️</div>
+                        <div>
+                          <strong>Event-Driven Queues</strong>
+                          <span>Redis queues process emails and AI cards asynchronously</span>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="ts-highlight-icon">📱</div>
+                        <div>
+                          <strong>Web Push Alerts</strong>
+                          <span>Service worker alerts incoming calls even when tab is closed</span>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="ts-highlight-icon">👥</div>
+                        <div>
+                          <strong>Collaborative Sync</strong>
+                          <span>Cursor tracking and typing states throttled at 50ms</span>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  
+                  <!-- Main Architecture Flow Area -->
+                  <div class="ts-main-flow">
+                    <!-- Flow Top Row Steps -->
+                    <div class="ts-flow-row">
+                      <!-- Step 1 -->
+                      <div class="ts-flow-card">
+                        <div class="ts-badge">1</div>
+                        <div class="ts-flow-icon">💻</div>
+                        <div class="ts-flow-text">
+                          <strong>Client Action</strong>
+                          <span>Call Click / Card Drag</span>
+                        </div>
+                      </div>
+                      
+                      <div class="ts-arrow">→</div>
+                      
+                      <!-- Step 2 -->
+                      <div class="ts-flow-card">
+                        <div class="ts-badge">2</div>
+                        <div class="ts-flow-icon">🚀</div>
+                        <div class="ts-flow-text">
+                          <strong>Spring Controller</strong>
+                          <span>WebSocket / REST Endpoint</span>
+                        </div>
+                      </div>
+                      
+                      <div class="ts-arrow">→</div>
+                      
+                      <!-- Step 3 -->
+                      <div class="ts-flow-card">
+                        <div class="ts-badge">3</div>
+                        <div class="ts-flow-icon">🛡️</div>
+                        <div class="ts-flow-text">
+                          <strong>JWT & Presence Filter</strong>
+                          <span>Stateless Principal Verification</span>
+                        </div>
+                      </div>
+                      
+                      <div class="ts-arrow">→</div>
+                      
+                      <!-- Step 4 -->
+                      <div class="ts-flow-card">
+                        <div class="ts-badge">4</div>
+                        <div class="ts-flow-icon">🔔</div>
+                        <div class="ts-flow-text">
+                          <strong>Instant Ack (200 OK)</strong>
+                          <span>Immediate WebSocket return</span>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <!-- Async Pipeline Section -->
+                    <div class="ts-async-pipeline">
+                      <div class="ts-async-header">
+                        <span>ASYNC PIPELINE (Background Execution)</span>
+                      </div>
+                      <div class="ts-async-grid">
+                        <div class="ts-async-card">
+                          <div class="ts-async-icon">📞</div>
+                          <strong>WebRTC Signaling</strong>
+                          <span>SDP / ICE candidate routing</span>
+                        </div>
+                        <div class="ts-async-card">
+                          <div class="ts-async-icon">📪</div>
+                          <strong>Redis Mailer Queue</strong>
+                          <span>Async welcome & alert dispatches</span>
+                        </div>
+                        <div class="ts-async-card">
+                          <div class="ts-async-icon">💾</div>
+                          <strong>Upstash Caching</strong>
+                          <span>Cursor & chat history storage</span>
+                        </div>
+                        <div class="ts-async-card">
+                          <div class="ts-async-icon">🗄️</div>
+                          <strong>JPA Relational Sync</strong>
+                          <span>CockroachDB atomic transactions</span>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <!-- Why Async Box -->
+                    <div class="ts-why-async">
+                      <div class="ts-card-title">Why Async & Redis?</div>
+                      <ul class="ts-check-list">
+                        <li>📌 <strong>Zero Thread Blocking</strong>: HTTP endpoints yield immediately, scaling stateless servers.</li>
+                        <li>📌 <strong>Global Low Latency</strong>: Upstash Redis replicas achieve &lt; 2ms cache read response times.</li>
+                        <li>📌 <strong>Resilient Delivery</strong>: Decoupled workers handle heavy notification payloads via queues.</li>
+                      </ul>
+                    </div>
+                  </div>
+                  
+                  <!-- Right Tech Stack Column -->
+                  <div class="ts-column ts-stack">
+                    <div class="ts-card-title">Technology Stack</div>
+                    <ul class="ts-stack-list">
+                      <li>
+                        <div class="ts-stack-logo">☕</div>
+                        <div>
+                          <strong>Java 21</strong>
+                          <span>Modern LTS compiler backend</span>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="ts-stack-logo">🌱</div>
+                        <div>
+                          <strong>Spring Boot 3</strong>
+                          <span>Enterprise core compute layer</span>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="ts-stack-logo">📞</div>
+                        <div>
+                          <strong>WebRTC & STOMP</strong>
+                          <span>P2P voice & WebSocket signaling</span>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="ts-stack-logo">🔴</div>
+                        <div>
+                          <strong>Upstash Redis</strong>
+                          <span>Cloud-native cache & event queues</span>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="ts-stack-logo">🐘</div>
+                        <div>
+                          <strong>PostgreSQL / CockroachDB</strong>
+                          <span>ACID transactions & persistence</span>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
-              <p class="arch-desc">
-                Incoming REST queries are processed through standard filter chains. Spring Boot controllers parse 
-                requests, execute transactional business logic inside services, and interact with the data layer using 
-                Spring Data JPA. Responses are serialized to JSON.
-              </p>
             </div>
             
-            <!-- Security Tab -->
+            <!-- Signaling Flow Tab (Showing call signaling sequence) -->
             <div class="arch-pane" id="security-pane">
-              <div class="code-window">
-                <div class="code-window-header">
-                  <div class="window-dot red"></div>
-                  <div class="window-dot yellow"></div>
-                  <div class="window-dot green"></div>
-                  <span class="window-title">WebSecurityConfig.java</span>
+              <div class="ts-diagram">
+                <div class="ts-diagram-header">
+                  <h3>WEBRTC CALL SIGNALING SEQUENCE</h3>
+                  <p>Stateless Coordination, Signaling exchange and Web Push Notifications</p>
                 </div>
-                <div class="code-window-body">
-                  <pre><code><span class="c-annotation">@Bean</span>
-<span class="c-keyword">public</span> <span class="c-type">SecurityFilterChain</span> filterChain(<span class="c-type">HttpSecurity</span> http) <span class="c-keyword">throws</span> <span class="c-type">Exception</span> {
-    http.csrf(csrf -> csrf.disable())
-        .sessionManagement(session -> session.sessionCreationPolicy(STATELESS))
-        .authorizeHttpRequests(auth -> auth
-            .requestMatchers(<span class="c-string">"/api/v1/auth/**"</span>).permitAll()
-            .anyRequest().authenticated()
-        )
-        .addFilterBefore(jwtAuthFilter(), <span class="c-type">UsernamePasswordAuthenticationFilter</span>.class);
-    <span class="c-keyword">return</span> http.build();
-}</code></pre>
+                <div class="ts-signaling-flow">
+                  <div class="ts-signaling-step">
+                    <div class="ts-signaling-actor">Caller (User A)</div>
+                    <div class="ts-signaling-arrow">── WebRTC SDP Offer (/app/call.offer) ──▶</div>
+                    <div class="ts-signaling-actor ts-server">Spring WebSocket Server</div>
+                  </div>
+                  <div class="ts-signaling-step-note">
+                    Server triggers Background Web Push notification to Target User to guarantee alert receipt when tab is inactive.
+                  </div>
+                  <div class="ts-signaling-step">
+                    <div class="ts-signaling-actor ts-server">Spring WebSocket Server</div>
+                    <div class="ts-signaling-arrow">── Forward Signal (/user/{target}/queue/call) ──▶</div>
+                    <div class="ts-signaling-actor">Callee (User B)</div>
+                  </div>
+                  <div class="ts-signaling-step-note">
+                    If Callee is busy, decline is sent. Otherwise, Callee returns WebRTC SDP Answer to Caller.
+                  </div>
+                  <div class="ts-signaling-step">
+                    <div class="ts-signaling-actor">Callee (User B)</div>
+                    <div class="ts-signaling-arrow">◀── SDP Answer & ICE Exchange (P2P Audio Connected) ──</div>
+                    <div class="ts-signaling-actor">Caller (User A)</div>
+                  </div>
                 </div>
               </div>
-              <p class="arch-desc">
-                Role-based access controls (RBAC) are established using stateless JWT verification. Every restricted request is parsed by 
-                a customized JWT validation filter, building secure context authorization tokens dynamically.
-              </p>
             </div>
             
-            <!-- Database Tab -->
+            <!-- Stateless Stack Tab (Database & Caching strategy) -->
             <div class="arch-pane" id="db-pane">
-              <div class="db-visual">
-                <div class="db-box cache">
-                  <h3>Redis Cache Layer</h3>
-                  <p>In-memory cache for fast session handling and API caching (Reads: &lt; 2ms)</p>
+              <div class="ts-diagram">
+                <div class="ts-diagram-header">
+                  <h3>STATELESS STORAGE LAYER</h3>
+                  <p>Caching pattern and Relational Sync strategy</p>
                 </div>
-                <div class="db-arrow-double">↕</div>
-                <div class="db-box sql">
-                  <h3>MySQL Relational Database</h3>
-                  <p>Persistent storage with JPA mappings, foreign keys, transaction rollbacks, and indexing optimizations.</p>
+                <div class="ts-db-grid">
+                  <div class="ts-db-card cache-aside">
+                    <h4>Redis Cache-Aside Pattern</h4>
+                    <p>In-memory cache handles sub-2ms reads. If a cache miss occurs, data is fetched from PostgreSQL and written back to Redis dynamically.</p>
+                  </div>
+                  <div class="ts-db-card queue-broker">
+                    <h4>Redis Event-Driven Queue</h4>
+                    <p>Offloads synchronous execution paths (e.g. welcome mailers, AI Scrum analysis). Worker daemons consume from Redis lists asynchronously.</p>
+                  </div>
+                  <div class="ts-db-card db-transaction">
+                    <h4>ACID Database Commit</h4>
+                    <p>Neon PostgreSQL database enforces data normalization, foreign key consistency, and atomic transactional commits.</p>
+                  </div>
                 </div>
               </div>
-              <p class="arch-desc">
-                Read-heavy APIs leverage Redis cache-aside patterns to avoid hammering MySQL. Spring's 
-                <code>@Transactional</code> enforces strict ACID properties for safe database writes.
-              </p>
             </div>
           </div>
         </div>
