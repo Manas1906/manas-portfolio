@@ -472,7 +472,7 @@
           <div class="console-main">
             <div class="console-header-bar">
               <span class="method-indicator get" id="console-method">GET</span>
-              <input type="text" class="console-url-input" id="console-url" value="https://manasacharya.in/api/v1/profile" readonly />
+              <input type="text" class="console-url-input" id="console-url" value="https://manasacharya.in/api/v1/profile" readonly aria-label="Simulated Request URL" />
               <button class="console-send-btn" id="console-send">Send Request</button>
             </div>
             
@@ -492,10 +492,10 @@
                   <form id="api-contact-form" class="console-contact-form" name="contact" data-netlify="true">
                     <input type="hidden" name="form-name" value="contact" />
                     <div class="form-row">
-                      <input type="text" id="api-name" name="name" placeholder="Your Name" required />
-                      <input type="email" id="api-email" name="email" placeholder="Your Email" required />
+                      <input type="text" id="api-name" name="name" placeholder="Your Name" required aria-label="Your Name" />
+                      <input type="email" id="api-email" name="email" placeholder="Your Email" required aria-label="Your Email Address" />
                     </div>
-                    <textarea id="api-message" name="message" placeholder="Message content..." rows="4" required></textarea>
+                    <textarea id="api-message" name="message" placeholder="Message content..." rows="4" required aria-label="Your Message"></textarea>
                     <p class="form-help-text">// Click 'Send Request' to transmit this body as application/json</p>
                   </form>
                 </div>

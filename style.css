@@ -282,6 +282,8 @@ section {
   font-size: 1.6rem;
   color: hsl(var(--text-secondary));
   margin-bottom: 24px;
+  min-height: 2.2rem; /* Reserve layout space to prevent CLS shift */
+  line-height: 1.25;
 }
 .typed-cursor-prefix {
   color: hsl(var(--secondary));
