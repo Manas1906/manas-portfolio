@@ -31,6 +31,8 @@
     
     <!-- CSS -->
     <link rel="stylesheet" href="style.css" />
+    <!-- JS (Deferred for performance & to avoid render-blocking) -->
+    <script src="script.js" defer></script>
 
     <!-- SEO Meta Tags -->
     <meta
@@ -114,11 +116,11 @@
           <span class="logo-text">Manas<span class="logo-dot">.</span></span>
         </a>
 
-        <div class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu">
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu">
           <span class="bar"></span>
           <span class="bar"></span>
           <span class="bar"></span>
-        </div>
+        </button>
 
         <ul class="nav-links" id="nav-links">
           <li><a href="#home" class="nav-link">Home</a></li>
@@ -327,12 +329,12 @@
             <div class="arch-pane" id="db-pane">
               <div class="db-visual">
                 <div class="db-box cache">
-                  <h4>Redis Cache Layer</h4>
+                  <h3>Redis Cache Layer</h3>
                   <p>In-memory cache for fast session handling and API caching (Reads: &lt; 2ms)</p>
                 </div>
                 <div class="db-arrow-double">↕</div>
                 <div class="db-box sql">
-                  <h4>MySQL Relational Database</h4>
+                  <h3>MySQL Relational Database</h3>
                   <p>Persistent storage with JPA mappings, foreign keys, transaction rollbacks, and indexing optimizations.</p>
                 </div>
               </div>
@@ -450,7 +452,7 @@
         
         <div class="console-container">
           <div class="console-sidebar">
-            <h4 class="sidebar-title">Endpoints</h4>
+            <h3 class="sidebar-title">Endpoints</h3>
             <div class="endpoint-item active" data-method="GET" data-path="/api/v1/profile">
               <span class="method get">GET</span>
               <span class="path">/profile</span>
@@ -537,7 +539,7 @@
               optimizing index-heavy SQL queries, and utilizing Redis for caching. I actively design schemas and construct responsive backend pipelines.
             </p>
             <div class="about-methodologies">
-              <h4 class="methodology-title">// Core Methodologies & Engineering Focus</h4>
+              <h3 class="methodology-title">// Core Methodologies & Engineering Focus</h3>
               <ul class="methodology-list">
                 <li>Object-Oriented Programming (OOP) & SOLID Design Patterns</li>
                 <li>Stateless Authentication (JWT) & API Gateway Security</li>
@@ -610,7 +612,5 @@
       <span class="whatsapp-tooltip">Let's Connect!</span>
     </a>
 
-    <!-- JS -->
-    <script src="script.js"></script>
   </body>
 </html>
