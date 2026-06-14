@@ -17,7 +17,11 @@
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
     <title>Manas Acharya | Java Backend Developer</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>☕</text></svg>" />
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -45,11 +49,11 @@
     <meta property="og:description" content="Java Backend Developer specializing in building scalable systems using Spring Boot, REST APIs, and relational databases." />
     <meta property="og:image" content="https://manasacharya.in/assets/og-image.jpg" />
 
-    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://manasacharya.in/" />
     <meta property="twitter:title" content="Manas Acharya | Java Backend Developer" />
     <meta property="twitter:description" content="Java Backend Developer specializing in building scalable systems using Spring Boot, REST APIs, and relational databases." />
+    <meta property="twitter:image" content="https://manasacharya.in/assets/og-image.jpg" />
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://manasacharya.in/" />
@@ -483,12 +487,13 @@
                 
                 <!-- Mock Input Form (Hidden by default, shown for POST) -->
                 <div class="mock-form-container" id="mock-form-container">
-                  <form id="api-contact-form" class="console-contact-form">
+                  <form id="api-contact-form" class="console-contact-form" name="contact" data-netlify="true">
+                    <input type="hidden" name="form-name" value="contact" />
                     <div class="form-row">
-                      <input type="text" id="api-name" placeholder="Your Name" required />
-                      <input type="email" id="api-email" placeholder="Your Email" required />
+                      <input type="text" id="api-name" name="name" placeholder="Your Name" required />
+                      <input type="email" id="api-email" name="email" placeholder="Your Email" required />
                     </div>
-                    <textarea id="api-message" placeholder="Message content..." rows="4" required></textarea>
+                    <textarea id="api-message" name="message" placeholder="Message content..." rows="4" required></textarea>
                     <p class="form-help-text">// Click 'Send Request' to transmit this body as application/json</p>
                   </form>
                 </div>

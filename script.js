@@ -232,6 +232,7 @@ function initApiConsole() {
         // Retrieve and format database content
         const resBody = mockDatabase[activeEndpoint];
         jsonOutput.textContent = JSON.stringify(resBody, null, 2);
+
       } else if (activeMethod === "POST" && activeEndpoint === "/api/v1/contact") {
         // Read form inputs
         const nameInput = document.getElementById("api-name");
@@ -255,31 +256,60 @@ function initApiConsole() {
           return;
         }
 
-        // Output request response payload
-        statusInd.textContent = "Status: 201 Created";
-        statusInd.style.color = "#98c379";
-        
-        formContainer.style.display = "none";
-        jsonOutput.parentNode.style.display = "block";
+        // Send actual payload to Netlify forms via AJAX
+        const formData = new URLSearchParams();
+        formData.append("form-name", "contact");
+        formData.append("name", nameInput.value);
+        formData.append("email", emailInput.value);
+        formData.append("message", msgInput.value);
 
-        const successResponse = {
-          "status": 201,
-          "message": "Message received successfully. Transaction committed to DB.",
-          "transactionId": `tx-${Math.random().toString(36).substr(2, 9)}-jpa`,
-          "timestamp": new Date().toISOString(),
-          "payloadTransmitted": {
-            "name": nameInput.value,
-            "email": emailInput.value,
-            "message": msgInput.value
-          }
-        };
+        fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: formData.toString()
+        })
+        .then(() => {
+          // Output request response payload
+          statusInd.textContent = "Status: 201 Created";
+          statusInd.style.color = "#98c379";
+          
+          formContainer.style.display = "none";
+          jsonOutput.parentNode.style.display = "block";
 
-        jsonOutput.textContent = JSON.stringify(successResponse, null, 2);
-        
-        // Reset the form fields
-        nameInput.value = "";
-        emailInput.value = "";
-        msgInput.value = "";
+          const successResponse = {
+            "status": 201,
+            "message": "Message received successfully. Transaction committed to DB.",
+            "transactionId": `tx-${Math.random().toString(36).substr(2, 9)}-jpa`,
+            "timestamp": new Date().toISOString(),
+            "payloadTransmitted": {
+              "name": nameInput.value,
+              "email": emailInput.value,
+              "message": msgInput.value
+            }
+          };
+
+          jsonOutput.textContent = JSON.stringify(successResponse, null, 2);
+          
+          // Reset the form fields
+          nameInput.value = "";
+          emailInput.value = "";
+          msgInput.value = "";
+        })
+        .catch(err => {
+          statusInd.textContent = "Status: 500 Internal Server Error";
+          statusInd.style.color = "#e06c75";
+          
+          formContainer.style.display = "block";
+          jsonOutput.parentNode.style.display = "block";
+          
+          jsonOutput.textContent = JSON.stringify({
+            "timestamp": new Date().toISOString(),
+            "status": 500,
+            "error": "Internal Server Error",
+            "message": "Failed to transmit message: " + err.message,
+            "path": "/api/v1/contact"
+          }, null, 2);
+        });
       }
     }, 600); // 600ms latency simulation
   });
