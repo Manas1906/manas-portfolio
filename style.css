@@ -161,6 +161,7 @@ header {
   max-width: 1200px;
   margin: 0 auto;
   padding: 16px 24px;
+  position: relative;
 }
 
 .logo {
@@ -371,7 +372,7 @@ section {
 
 /* --- Skills Section --- */
 .skills-grid {
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
 }
 .skills-card {
   background-color: hsl(var(--bg-dark));
@@ -559,7 +560,7 @@ section {
 
 /* --- Projects Section --- */
 .projects-grid {
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
 }
 .project-card {
   background-color: hsl(var(--bg-dark));
@@ -1148,6 +1149,9 @@ footer {
 }
 
 @media (max-width: 768px) {
+  .page-container {
+    padding: 0 16px;
+  }
   section {
     padding: 80px 0 45px;
   }
@@ -1156,6 +1160,29 @@ footer {
   }
   .menu-toggle {
     display: flex;
+  }
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+  .hero-actions .btn {
+    width: 100%;
+  }
+  .code-window {
+    max-width: 100%;
+  }
+  .about-card {
+    padding: 24px 16px;
+  }
+  .project-card {
+    padding: 24px 16px;
+  }
+  .ts-diagram {
+    padding: 16px 12px;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
   }
   .nav-links {
     position: absolute;
@@ -1637,7 +1664,7 @@ footer {
 }
 
 /* Responsive Rules for Diagram */
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .ts-diagram-grid {
     grid-template-columns: 1fr;
   }
@@ -1664,6 +1691,24 @@ footer {
   .ts-signaling-arrow {
     transform: rotate(90deg);
     padding: 10px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.0rem !important;
+  }
+  .hero-subtitle {
+    font-size: 1.1rem !important;
+  }
+  .section-title {
+    font-size: 1.75rem !important;
+  }
+  .about-card {
+    padding: 16px 12px !important;
+  }
+  .project-card {
+    padding: 20px 12px !important;
   }
 }
 
